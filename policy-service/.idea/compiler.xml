@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="policy-service.policy-service.main" target="19" />
-      <module name="policy-service.policy-service.test" target="19" />
+      <module name="policy-service.policy-service.main~1" target="19" />
+      <module name="policy-service.policy-service.test~1" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>

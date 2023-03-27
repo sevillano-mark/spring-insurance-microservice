@@ -1,9 +1,7 @@
 package com.sevillanomark.policymgmtsystem.policyservice.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -17,6 +15,8 @@ public class Policy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger policyId;
 
+    @ManyToOne
+    @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
     private User owner;
 
     private String policyNumber;
@@ -38,9 +38,10 @@ public class Policy {
     public Policy() {
     }
 
-    public Policy(BigInteger policyId, String policyNumber, BigDecimal monthlyFee, BigDecimal insuranceAmount,
+    public Policy(BigInteger policyId, User owner, String policyNumber, BigDecimal monthlyFee, BigDecimal insuranceAmount,
                     int yearsToPay, Date startDate, Date createdDate, Date lastModifiedDate) {
         this.policyId = policyId;
+        this.owner = owner;
         this.policyNumber = policyNumber;
         this.monthlyFee = monthlyFee;
         this.insuranceAmount = insuranceAmount;
@@ -48,6 +49,14 @@ public class Policy {
         this.startDate = startDate;
         this.createdDate = createdDate;
         this.lastModifiedDate = lastModifiedDate;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
     }
 
     public BigInteger getPolicyId() {

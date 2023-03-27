@@ -12,7 +12,6 @@ import java.util.Date;
 @EntityListeners(AuditingEntityListener.class)
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private BigInteger userId;
 
     private String email;
@@ -21,7 +20,7 @@ public class User {
 
     private String lastName;
 
-    private String userType;
+    //private String userType;
 
     @CreatedDate
     private Date createdDate;
@@ -37,7 +36,7 @@ public class User {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userType = userType;
+        //this.userType = userType;
     }
 
     public String getEmail() {
@@ -72,12 +71,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
-    }
+//    public String getUserType() {
+//        return userType;
+//    }
+//
+//    public void setUserType(String userType) {
+//        this.userType = userType;
+//    }
 
 }

@@ -1,0 +1,66 @@
+package com.sevillanomark.policymgmtsystem.policyservice.dtos;
+
+import java.math.BigInteger;
+
+public class UserDto {
+    private BigInteger userId;
+    private String email;
+
+    private String firstName;
+
+    private String lastName;
+
+    private BigInteger userType;
+
+    public UserDto() {
+    }
+
+    public UserDto(BigInteger userId, String email, String firstName, String lastName, BigInteger userType) {
+        super();
+        this.userId = userId;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.userType = userType;
+    }
+
+    public BigInteger getUserId() {
+        return userId;
+    }
+
+    public void setUserId(BigInteger userId) {
+        this.userId = userId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public BigInteger getUserType() {
+        return userType;
+    }
+
+    public void setUserType(BigInteger userType) {
+        this.userType = userType;
+    }
+}
